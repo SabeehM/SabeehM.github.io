@@ -19,8 +19,29 @@
         </div>
         <h2>Some Tools I Use...</h2>
         <div class="row">
-          <div class="col-lg-3 col-md-6 mb-5" v-for="(offer, index) in tools" :key="index">
-            <div class="icon mx-auto"><i class="" :class="offer.icon"></i></div>
+          <div class="col-lg-3 col-md-6 mb-5">
+            <div class="icon mx-auto"><img class="logo" :src="require('../assets/git.png')"></div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-5">
+            <div class="icon mx-auto"><img class="logo" :src="require('../assets/jira.png')"></div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-5">
+            <div class="icon mx-auto"><img class="logo" :src="require('../assets/mongodb.png')"></div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-5">
+            <div class="icon mx-auto"><img class="logo" :src="require('../assets/nodejs.jpg')"></div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-5">
+            <div class="icon mx-auto"><img class="logo" :src="require('../assets/react.png')"></div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-5">
+            <div class="icon mx-auto"><img class="logo" :src="require('../assets/express.png')"></div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-5">
+            <div class="icon mx-auto"><img class="logo" :src="require('../assets/as.jpg')"></div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-5">
+            <div class="icon mx-auto"><img class="logo" :src="require('../assets/djangoicon.png')"></div>
           </div>
         </div>
       </section>
@@ -30,7 +51,7 @@
         
         <h3>Experiences</h3>
         <h5>Veeva Systems</h5>
-        <img class="img-fluid" :src="require('../assets/temp.png')" alt=''>
+        <img class="img-fluid" :src="require('../assets/veeva.png')" alt=''>
         <h6>QA Engineer Intern</h6>
         <p>Information Goes HereInformation Goes HereInformation Goes HereInformation Goes HereInformation Goes Here
         Information Goes HereInformation Goes HereInformation Goes HereInformation Goes HereInformation Goes Here
@@ -40,19 +61,19 @@
       </section>
     </article>
 
-    <article id="recent-projects" class="red-section">
+    <article id="recent-projects" class="project-section">
       <section class="container">
         <h3>Recent Projects</h3>
         <div class="row no-gutters">
           <div class="col-lg-6" v-for="(project, index) in recentProjects" :key="index">
-            <a href="" class="portfolio-item">
+            <a href="javascript:void(0);" class="portfolio-item">
+              <img class="img-fluid" height="900px" :src="require('../assets/'+project.img)" alt=''>
               <span class="caption">
-                <span class="caption-item">
+                <span class="caption-content">
                   <h2>{{project.title}}</h2>
                   <p class="mb-0">{{project.description}}</p>
                 </span>
               </span>
-              <img class="img-fluid" :src="require('../assets/'+project.img)" alt=''>
             </a>
           </div>
         </div>
@@ -64,7 +85,8 @@
         <h2>Contacts</h2>
         <div class="row">
           <div class="col-md-4 mb-5" v-for="(contact, index) in contacts" :key="index">
-            <div class="icon mx-auto"><a :href="contact.ref"><i class="" :class="contact.icon"></i></a></div>
+            <div class="icon mx-auto"><a :href="contact.ref" @click="copyInfo(contact.icon)"><i class="" :class="contact.icon"></i></a></div>
+            <p v-if="copied && (contact.icon.includes('envelope'))">Copied to Clipboard!</p>
           </div>
         </div>
       </section>
@@ -76,6 +98,7 @@
 export default {
   data: () => {
     return {
+      copied: false,
       offers: [
         {
           icon: "fab fa-python",
@@ -116,37 +139,37 @@ export default {
       contacts: [
         {
           icon: "fab fa-linkedin icon",
-          ref: "https://www.linkedin.com/in/sabeeh-malik/"
+          ref: "https://www.linkedin.com/in/sabeeh-malik/",
         },
         {
           icon: "fab fa-github-square icon",
-          ref: "https://github.com/"
+          ref: "https://github.com/",
         },
         {
           icon: "fas fa-envelope-square icon",
-          ref: "#"
+          ref: "javascript:void(0);",
         },
       ],
       recentProjects: [
         {
-          img: "temp.png",
-          title: "Stationary",
-          description: "Lorem Ipsum yo"
+          img: "ProjectView.png",
+          title: "Pitch-In!",
+          description: "A full stack website created to help track funding for projects. It allows users to keep their contributions anonymous. Users are able to create, search, and join projects. They are also able to add and remove users/contributions from a project."
         },
         {
-          img: "temp.png",
-          title: "Stationary",
-          description: "Lorem Ipsum yo"
+          img: "starterhacks_r.png",
+          title: "Chef Fridge (StarterHacks)",
+          description: "A hardware and software system designed to suggest recipe's based off the food inside someone's fridge. It detects a fridge door’s motion and takse a photo once it closes. It then uses Google Cloud Vision AI to identify any objects in the image, and compared it to a food database."
         },
         {
-          img: "temp.png",
-          title: "Stationary",
-          description: "Lorem Ipsum yo"
+          img: "django.jpg",
+          title: "Tracking QR Code Generator",
+          description: "A Django web application that designates trackable and customizable QR Codes for websites requested by any user. The user is able to track information about their QR Codes."
         },
         {
-          img: "temp.png",
-          title: "Stationary",
-          description: "Lorem Ipsum yo"
+          img: "app.png",
+          title: "Reddit Slideshow Viewer (Android App)",
+          description: "A simple android app which displays images from a chosen subreddit as a slideshow. The user is able to choose a reddit, sort it, as well as the time interval for the slideshow."
         }
       ]
     }
@@ -158,6 +181,20 @@ export default {
         behaviour: "smooth",
         block: "start"
       })
+    },
+    copyInfo(element){
+      if(element.includes("envelope")){
+        const el = document.createElement('textarea');
+        el.value = "s73malik@uwaterloo.ca";
+        el.setAttribute('readonly', '');
+        el.style.position = 'absolute';
+        el.style.left = '-9999px';
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+        this.copied = true;
+      }
     }
   }
 }
@@ -178,6 +215,10 @@ export default {
     border-radius: 2%;
   }
 
+  .logo{
+    height: 50px;
+    width: 50px;
+  }
   article{
     display:flex;
     justify-content:center;
@@ -294,27 +335,15 @@ export default {
     overflow: hidden;
     background-color: transparent;
 
-    .caption{
-      display:flex;
-      height:100%;
-      width: 100%;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      z-index: 1;
-      background-color: transparent;
-      transition: transform 0.2s linear;
-
-        .caption-content{
-          background-color: transparent;
-          text-align: left;
-          color: #fff;
-          margin: auto 2rem 2rem;
-        }
-    }
-
+    
     img{
+      min-height: 200px;
+      max-height:200px;
+      max-width:400px;
       transition: transform .2s linear;
+    } 
+    a{
+      text-decoration: none;
     }
     &:hover{
       img{
@@ -335,7 +364,7 @@ export default {
     text-align: center;
     border-radius: 1%;
 
-    h2{
+    h2,h3{
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 50px;
@@ -408,6 +437,68 @@ export default {
       color: #E85A4F;
     }
     }
+
   }
+  .project-section{
+      padding: 120px 10px;
+      background-color: #8E8D8A;
+      text-align: center;
+      h3{
+        font-size: 2rem;
+        font-weight: bold;
+      }
+      span{
+        display: block;
+        padding-bottom: 30px;
+        font-size: 1.25rem;
+      }
+      .row{
+        padding-top:50px;
+      }
+      a{
+      text-decoration: none;
+      }
+      .portfolio-item{
+        display:block;
+        position: relative;
+        overflow: hidden;
+
+        .caption{
+          height: 100%;
+          width: 100%;
+          transition: transform 0.2s linear;
+          .caption-content{
+            background: transparent;
+            text-align:left;
+            color:#000;
+            margin: auto 2rem 2rem;
+          }
+
+          h2{
+            padding-top:20px;
+            background: transparent;
+            font-size: 2rem;
+          }
+
+          p{
+            font-size: 0.8rem;
+          }
+        }
+
+        img{
+          transition: transform 0.2s linear;
+        }
+
+        &:hover{
+          img{
+            transform: scale(0.9);
+          }
+          .caption{
+            transform: scale(0.9);
+            
+          }
+        }
+      }
+    }
   
 </style>
