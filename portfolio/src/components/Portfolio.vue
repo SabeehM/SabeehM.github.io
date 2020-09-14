@@ -53,11 +53,19 @@
         <h5>Veeva Systems</h5>
         <img class="img-fluid" :src="require('../assets/veeva.png')" alt=''>
         <h6>QA Engineer Intern</h6>
-        <p>Information Goes HereInformation Goes HereInformation Goes HereInformation Goes HereInformation Goes Here
-        Information Goes HereInformation Goes HereInformation Goes HereInformation Goes HereInformation Goes Here
-        Information Goes HereInformation Goes HereInformation Goes HereInformation Goes HereInformation Goes Here
-        Information Goes HereInformation Goes HereInformation Goes HereInformation Goes HereInformation Goes Here
-        Information Goes HereInformation Goes HereInformation Goes HereInformation Goes Here</p>
+        <p>Working as a QA Engineer was my first experience in a tech field. It was a great introduction into the software development lifecycle, 
+        and gave me great insight towards project management methodologies. Some of the tasks and projects I've been able to work on throughout the experience:
+        </p>
+        <ul>
+          <li>Automation Triaging: This involved viewing automation reports and checking for any defects. 
+          Oftentimes this involved troubleshooting, debugging, and improving the automation framework in the case where there are underlying issues unrelated to the actual software product.</li>
+          <li>Automation Improvements: Plenty of my coop experience involved implemented new ideas and upgrades to our automation frameworks.
+            <ul>
+              <li>Refactoring Framework</li>
+              <li>Introducing new API and UI Testing</li>
+            </ul>
+          </li>
+        </ul>
       </section>
     </article>
 
@@ -154,12 +162,12 @@ export default {
         {
           img: "ProjectView.png",
           title: "Pitch-In!",
-          description: "A full stack website created to help track funding for projects. It allows users to keep their contributions anonymous. Users are able to create, search, and join projects. They are also able to add and remove users/contributions from a project."
+          description: "A full stack website created to help track funding for projects, allowing users to keep their contributions anonymous if desired. Users are able to create, search, and join projects. They are also able to add and remove users/contributions from a project."
         },
         {
           img: "starterhacks_r.png",
           title: "Chef Fridge (StarterHacks)",
-          description: "A hardware and software system designed to suggest recipe's based off the food inside someone's fridge. It detects a fridge door’s motion and takse a photo once it closes. It then uses Google Cloud Vision AI to identify any objects in the image, and compared it to a food database."
+          description: "A hardware and software system designed to suggest recipe's based off the food inside someone's fridge. It detects a fridge door’s motion and takes a photo once it closes. It then uses Google Cloud Vision AI to identify any objects in the image, and compared it to a food database."
         },
         {
           img: "django.jpg",
@@ -169,7 +177,7 @@ export default {
         {
           img: "app.png",
           title: "Reddit Slideshow Viewer (Android App)",
-          description: "A simple android app which displays images from a chosen subreddit as a slideshow. The user is able to choose a reddit, sort it, as well as the time interval for the slideshow."
+          description: "A simple android app which displays images from a chosen subreddit as a slideshow. The user is able to choose a reddit, how to sort it, as well  time interval for the slideshow."
         }
       ]
     }
@@ -311,7 +319,7 @@ export default {
       font-weight: bold;
       text-align:left;
     }
-    p{
+    p, li{
       text-align: left;
       font-size: 1em;
     }
@@ -327,6 +335,7 @@ export default {
 
   .row{
     padding-top: 50px;
+    margin-top: 20px;
   }
 
   .portfolio-item{
@@ -373,6 +382,14 @@ export default {
     h4{
     font-size: 1.6rem;
     padding-top: 20px;
+    }
+
+    img{
+      transition: 0.3s ease-in-out;
+    }
+    img:hover{
+      transform: scale(0.9);
+      color: #E85A4F;
     }
 
     .icon{
