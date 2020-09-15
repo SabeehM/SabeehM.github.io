@@ -4,6 +4,8 @@
       <section>
         <h1>Sabeeh Malik</h1>
         <span>2A Computer Engineering Student at the <br> University of Waterloo.</span>
+        <button class="btn btn-xl btn-light" @click="scrollTo('experience')">Experience</button>
+        <button class="btn btn-xl btn-light" @click="scrollTo('recent-projects')">Projects</button>
         <button class="btn btn-xl btn-light" @click="scrollTo('contact')">Contact Me</button>
       </section>
     </article>
@@ -29,7 +31,7 @@
             <div class="icon mx-auto"><img class="logo" :src="require('../assets/mongodb.png')"></div>
           </div>
           <div class="col-lg-3 col-md-6 mb-5">
-            <div class="icon mx-auto"><img class="logo" :src="require('../assets/nodejs.jpg')"></div>
+            <div class="icon mx-auto"><img class="logo" :src="require('../assets/nodejs.png')"></div>
           </div>
           <div class="col-lg-3 col-md-6 mb-5">
             <div class="icon mx-auto"><img class="logo" :src="require('../assets/react.png')"></div>
@@ -38,7 +40,7 @@
             <div class="icon mx-auto"><img class="logo" :src="require('../assets/express.png')"></div>
           </div>
           <div class="col-lg-3 col-md-6 mb-5">
-            <div class="icon mx-auto"><img class="logo" :src="require('../assets/as.jpg')"></div>
+            <div class="icon mx-auto"><img class="logo" :src="require('../assets/as.png')"></div>
           </div>
           <div class="col-lg-3 col-md-6 mb-5">
             <div class="icon mx-auto"><img class="logo" :src="require('../assets/djangoicon.png')"></div>
@@ -46,26 +48,48 @@
         </div>
       </section>
     </article>
-    <article id="find-more" class="white-section">
+    <article id="experience" class="white-section">
       <section>
         
         <h3>Experiences</h3>
         <h5>Veeva Systems</h5>
         <img class="img-fluid" :src="require('../assets/veeva.png')" alt=''>
         <h6>QA Engineer Intern</h6>
-        <p>Working as a QA Engineer was my first experience in a tech field. It was a great introduction into the software development lifecycle, 
+        <p>Working as a QA Engineer was my first internship experience in the tech field. It was a great introduction into the software development lifecycle, 
         and gave me great insight towards project management methodologies. Some of the tasks and projects I've been able to work on throughout the experience:
         </p>
+        <div class="exp-desc">
         <ul>
-          <li>Automation Triaging: This involved viewing automation reports and checking for any defects. 
-          Oftentimes this involved troubleshooting, debugging, and improving the automation framework in the case where there are underlying issues unrelated to the actual software product.</li>
-          <li>Automation Improvements: Plenty of my coop experience involved implemented new ideas and upgrades to our automation frameworks.
+          <li class="divider">Automation Triaging: This involved viewing automation reports and checking for any defects. 
+          Oftentimes this meant troubleshooting, debugging, and improving the automation framework in the case where there are underlying issues unrelated to the actual software product.</li>
+          <li class="divider">Automation Improvements: Plenty of my coop experience involved implementing new ideas and upgrades to existing automation frameworks.</li>
             <ul>
               <li>Refactoring Framework</li>
-              <li>Introducing new API and UI Testing</li>
+              <ul>
+                <li>Introduced retry logic into automation framework. Invalid files that were a result of intermittent issues would be retried, reducing a large number of flappers</li>
+                <li>Refactored automation framework so that test cases could be run in a dynamic fashion, largely reducing automation triaging times</li>
+                <li>Made changes to improve automation efficiency by removing the need to run unnecessary tests</li>
+              </ul>
+              <li class="divider">Introducing new API and UI Testing</li>
+              <ul>
+                <li>Introduced API and UI testing to existing component which required manual efforts for years</li>
+                <li>Devised method to further specify API tests by connecting with AWS S3</li>
+              </ul>
+              <li class="divider">Improvements to Reporting Platforms</li>
+              <ul>
+                <li>Created new reports for retry logic, failed case specifics, and other insightful data</li>
+                <li>Drafted new web-report reporting platform</li>
+              </ul>
             </ul>
-          </li>
+            <li class="divider">Testing</li>
+            <ul>
+              <li>Designed and executed extensive regression test suites, covering numerous product features</li>
+              <li>Communicated with teams to develop thorough test plans</li>
+              <li>Increased automation coverage, and pitched in towards potential reasons for defects</li>
+              <li>Helped maintain product quality while following the agile development cycle</li>
+            </ul>
         </ul>
+        </div>
       </section>
     </article>
 
@@ -93,7 +117,7 @@
         <h2>Contacts</h2>
         <div class="row">
           <div class="col-md-4 mb-5" v-for="(contact, index) in contacts" :key="index">
-            <div class="icon mx-auto"><a :href="contact.ref" @click="copyInfo(contact.icon)"><i class="" :class="contact.icon"></i></a></div>
+            <div class="icon mx-auto"><a  :target="contact.icon.includes('envelope')? '_self' :'_blank'" rel="noopener noreferrer" :href="contact.ref" @click="copyInfo(contact.icon)"><i class="" :class="contact.icon"></i></a></div>
             <p v-if="copied && (contact.icon.includes('envelope'))">Copied to Clipboard!</p>
           </div>
         </div>
@@ -151,7 +175,7 @@ export default {
         },
         {
           icon: "fab fa-github-square icon",
-          ref: "https://github.com/",
+          ref: "https://github.com/SabeehM",
         },
         {
           icon: "fas fa-envelope-square icon",
@@ -235,7 +259,7 @@ export default {
     padding: 0 10px;
   }
   .btn-xl {
-    padding: 20px 35px;
+    margin: 20px 20px;
     font-size: 1.25rem;
     margin-top: 20px;
     padding: 12px 25px;
@@ -311,6 +335,10 @@ export default {
       width: 78%;
     }
 
+    .exp-desc{
+      font-size:0.9rem;
+    }
+
     h3{
     font-size: 2em;
     font-weight: bold;
@@ -322,6 +350,9 @@ export default {
     p, li{
       text-align: left;
       font-size: 1em;
+    }
+    .divider{
+      padding-top: 10px;
     }
     img{
       float:right;
@@ -461,6 +492,7 @@ export default {
       background-color: #8E8D8A;
       text-align: center;
       h3{
+        padding-top: 50px;
         font-size: 2rem;
         font-weight: bold;
       }
@@ -494,7 +526,7 @@ export default {
           h2{
             padding-top:20px;
             background: transparent;
-            font-size: 2rem;
+            font-size: 1.5rem;
           }
 
           p{
