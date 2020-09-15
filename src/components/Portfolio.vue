@@ -234,7 +234,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-  @import url("http://fonts.googleapis.com/css?family=Open+Sans");
+  @import url("https://fonts.googleapis.com/css?family=Open+Sans");
   @import url("https://use.fontawesome.com/releases/v5.8.1/css/all.css");
   @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css");
   *{
