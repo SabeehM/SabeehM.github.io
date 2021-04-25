@@ -3,13 +3,13 @@
     <article class="main-image">
       <section>
         <h1>Sabeeh Malik</h1>
-        <span>2B Computer Engineering Student at the <br> University of Waterloo.</span>
+        <span>2A Computer Engineering Student at the <br> University of Waterloo.</span>
         <button class="btn btn-xl btn-light" @click="scrollTo('experience')">Experience</button>
         <button class="btn btn-xl btn-light" @click="scrollTo('recent-projects')">Projects</button>
         <button class="btn btn-xl btn-light" @click="scrollTo('contact')">Contact Me</button>
       </section>
     </article>
-  <!--
+
     <article id="offers" class="red-section">
       <section class="container">
         <h2>Some Languages I Use...</h2>
@@ -49,106 +49,47 @@
         <br></br>
       </section>
     </article>
-    -->
     <article id="experience" class="white-section">
       <section>
+        
         <h3>Experiences</h3>
-        <h5>Uptake Canada</h5>
-        <div class="lg-image-container">
-          <img class="img-fluid" :src="require('../assets/uptake.png')" alt=''>
-        </div>
-        <h6>Full Stack Developer</h6>
-        <div class="row">
-          <div class="col-lg-1 col-md-6 mb-3" v-for="(element, index) in UptakeIcons" :key="index">
-            <div class="icon mx-auto"><i><img :title="element.title" class="logo-sm" :src="element.URL"></i></div>
-          </div>
-        </div>
-        <p>Interning as a full-stack developer at Uptake was great exposure to all aspects of web application development. During my time at Uptake, I was able to learn about best coding practices and design considerations.</p>
-        <p>Some of the tasks and projects I've been able to work on throughout the experience:</p>
-        <div class="exp-desc">
-        <ol>
-          <li class="divider">UI Contributions</li>
-          <ol>
-            <li>Introduced new UI components and functionality using Sencha Ext Js framework</li>
-            <li>Worked alongside customer experience team to communicate customer requirements and solutions</li>
-            <li>Maintained UI components by troubleshooting and resolving defects</li>
-          </ol> 
-          
-          <li class="divider">Working on Backend Logic and Middleware Services</li>
-            <ol>
-              <li>Reworking Backend Structure</li>
-              <ol>
-                <li>Helped in developing a new service-side application created to handle SQL business logic using Nest Js</li>
-                <li>Mapped out entities, models, and transformations to handle and improve data states</li>
-                <li>Designed and created new endpoints to methodically retrieve data from MS SQL server</li>
-                <li>Developed optimized and reusable services to process data using an ORM</li>
-                <li>Wrote thorough mock tests with 100% code coverage using Jest</li>
-              </ol>
-              <li>Improving Existing System</li>
-              <ol>
-                <li>Enchanced services to improve communication between frontend and backend or external services</li>
-                <li>Resolved defects existing in SQL backend logic for mobile and web applications</li>
-                <li>Developed comprehensive health checks for various services</li>
-              </ol>
-            </ol>
-            <li class="divider">Designing a Centralized Logging System</li>
-            <ol>
-              <li>Participated in discussing project requirements, sprint planning and risk evaluation</li>
-              <li>Researched and presented pros and cons for various logging solutions</li>
-              <li>Developed PoC using AWS Kinesis Firehose to stream data into S3</li>
-              <li>Created a MVP service to handle generic log-write contracts and send data</li>
-            </ol>
-        </ol>
-        </div>
-        
-        
         <h5>Veeva Systems</h5>
-        <div class="lg-image-container">
-          <img class="img-fluid" :src="require('../assets/veeva.png')" alt=''>
-        </div>
+        <img class="img-fluid" :src="require('../assets/veeva.png')" alt=''>
         <h6>QA Engineer Intern</h6>
-        <div class="row">
-          <div class="col-lg-1 col-md-6 mb-3" v-for="(element, index) in VeevaIcons" :key="index">
-            <div class="icon mx-auto"><i><img :title="element.title" class="logo-sm" :src="element.URL"></i></div>
-          </div>
-        </div>
         <p>Working as a QA Engineer was my first internship experience in the tech field. It was a great introduction into the software development lifecycle, 
-        and gave me insight towards ideal testing standards.</p>
-        <p>Some of the tasks and projects I've been able to work on throughout the experience:</p>
+        and gave me great insight towards project management methodologies. Some of the tasks and projects I've been able to work on throughout the experience:
+        </p>
         <div class="exp-desc">
-        <ol>
-          <li class="divider">Automation Triaging</li>
-            <ol>
-              <li>Analyzing automation reports to checking for any defects or questionable results</li>
-              <li>Troubleshooting, debugging, and improving automation frameworks to give accurate reports</li>
-            </ol>
-          <li class="divider">Automation Framework Development</li>
-            <ol>
+        <ul>
+          <li class="divider">Automation Triaging: This involved viewing automation reports and checking for any defects. 
+          Oftentimes this meant troubleshooting, debugging, and improving the automation framework in the case where there are underlying issues unrelated to the actual software product.</li>
+          <li class="divider">Automation Improvements: Plenty of my coop experience involved implementing new ideas and upgrades to existing automation frameworks.</li>
+            <ul>
               <li>Refactoring Framework</li>
-              <ol>
-                <li>Introduced retry logic into automation framework for intermittent issues, reducing a large number of flappers</li>
-                <li>Refactored automation framework so that test cases could be run in a dynamically, largely reducing automation triaging times</li>
-                <li>Made changes to improve automation efficiency by optimizing test case coverage</li>
-              </ol>
+              <ul>
+                <li>Introduced retry logic into automation framework. Invalid files that were a result of intermittent issues would be retried, reducing a large number of flappers</li>
+                <li>Refactored automation framework so that test cases could be run in a dynamic fashion, largely reducing automation triaging times</li>
+                <li>Made changes to improve automation efficiency by removing the need to run unnecessary tests</li>
+              </ul>
               <li class="divider">Introducing new API and UI Testing</li>
-              <ol>
-                <li>Introduced API and UI testing to existing components which required large manual efforts for years</li>
-                <li>Devised and implemented method to further specify API tests by connecting with AWS S3</li>
-              </ol>
+              <ul>
+                <li>Introduced API and UI testing to existing component which required manual efforts for years</li>
+                <li>Devised method to further specify API tests by connecting with AWS S3</li>
+              </ul>
               <li class="divider">Improvements to Reporting Platforms</li>
-              <ol>
-                <li>Created new reports for retry logic, failed case metrics, and other insightful data</li>
-                <li>Drafted new web-reporting platform for triaging</li>
-              </ol>
-            </ol>
+              <ul>
+                <li>Created new reports for retry logic, failed case specifics, and other insightful data</li>
+                <li>Drafted new web-report reporting platform</li>
+              </ul>
+            </ul>
             <li class="divider">Testing</li>
-            <ol>
-              <li>Designed and executed extensive regression test suites</li>
-              <li>Developed and presented thorough test plans</li>
-              <li>Increased automation coverage, and pitched in towards potential reasons/solutions for defects</li>
-              <li>Maintained product quality while following the agile development cycle</li>
-            </ol>
-        </ol>
+            <ul>
+              <li>Designed and executed extensive regression test suites, covering numerous product features</li>
+              <li>Communicated with teams to develop thorough test plans</li>
+              <li>Increased automation coverage, and pitched in towards potential reasons for defects</li>
+              <li>Helped maintain product quality while following the agile development cycle</li>
+            </ul>
+        </ul>
         </div>
       </section>
     </article>
@@ -164,11 +105,6 @@
                 <span class="caption-content">
                   <h2>{{project.title}}</h2>
                   <p class="mb-0">{{project.description}}</p>
-                  <div class="row">
-                    <div class="col-lg-2 col-md-6 mb-3" v-for="(element, index) in project.tools" :key="index">
-                      <div class="icon mx-auto"><i><img :title="element.title" class="portfolio-item logo-sm" :src="element.URL"></i></div>
-                    </div>
-                  </div>   
                 </span>
               </span>
             </a>
@@ -183,9 +119,7 @@
         <div class="row">
           <div class="col-md-4 mb-5" v-for="(contact, index) in contacts" :key="index">
             <div class="icon mx-auto"><a  :target="contact.icon.includes('envelope')? '_self' :'_blank'" rel="noopener noreferrer" :href="contact.ref" @click="copyInfo(contact.icon)"><i class="" :class="contact.icon"></i></a></div>
-            <transition name="fade">
-              <p v-if="copied && (contact.icon.includes('envelope'))">Copied to Clipboard!</p>
-            </transition>
+            <p v-if="copied && (contact.icon.includes('envelope'))">Copied to Clipboard!</p>
           </div>
         </div>
       </section>
@@ -198,75 +132,6 @@ export default {
   data: () => {
     return {
       copied: false,
-      UptakeIcons: [
-        {
-          title: "Jira",
-          URL: require('../assets/jira.png')
-        },
-        {
-          title: "Git",
-          URL: require('../assets/git.png')
-        },
-        {
-          title: ".NET",
-          URL: require('../assets/.net.png')
-        },
-        {
-          title: "Ext Js",
-          URL: require('../assets/sencha.png')
-        },
-        {
-          title: "MS SQL",
-          URL: require('../assets/mssql.png')
-        },
-        {
-          title: "Nest Js",
-          URL: require('../assets/nestjs.png')
-        },
-        {
-          title: "TypeORM",
-          URL: require('../assets/typeorm.png')
-        },
-        {
-          title: "Jest",
-          URL: require('../assets/jest.png')
-        },
-        {
-          title: "Kinesis Firehose",
-          URL: require('../assets/firehose.png')
-        },
-        {
-          title: "AWS S3",
-          URL: require('../assets/s3.png')
-        }
-      ],
-      VeevaIcons: [
-        {
-          title: "Jira",
-          URL: require('../assets/jira.png')
-        },
-        {
-          title: "Git",
-          URL: require('../assets/git.png')
-        },
-        {
-          title: "Maven",
-          URL: require('../assets/maven.png')
-        },
-        {
-          title: "JUnit",
-          URL: require('../assets/junit.png')
-        },
-        {
-          title: "S3",
-          URL: require('../assets/s3.png')
-        },
-        {
-          title: "NodeJs",
-          URL: require('../assets/nodejs.png')
-        },
-
-      ],
       offers: [
         {
           icon: "fab fa-python",
@@ -322,94 +187,23 @@ export default {
         {
           img: "ProjectView.png",
           title: "Pitch-In!",
-          description: "A full stack website created to help track funding for projects, allowing users to keep their contributions anonymous if desired. Users are able to create, search, and join projects. They are also able to add and remove users/contributions from a project.",
-          tools:[ 
-            {
-              title: "React",
-              URL: require('../assets/react.png')
-            },
-            {
-              title: "Express",
-              URL: require('../assets/express.png')
-            },
-            {
-              title: "MongoDB",
-              URL: require('../assets/mongodb.png')
-            },
-            {
-              title: "Node.js",
-              URL: require('../assets/nodejs.png')
-            },
-            {
-              title: "Redux",
-              URL: require('../assets/redux.png')
-            },
-            {
-              title: "JWT",
-              URL: require('../assets/jwt.png')
-            }
-          ]        
+          description: "A full stack website created to help track funding for projects, allowing users to keep their contributions anonymous if desired. Users are able to create, search, and join projects. They are also able to add and remove users/contributions from a project."
         },
         {
           img: "starterhacks_r.png",
           title: "Chef Fridge (StarterHacks)",
-          description: "A hardware and software system designed to suggest recipe's based off the food inside someone's fridge. It detects a fridge door’s motion and takes a photo once it closes. It then uses Google Cloud Vision AI to identify any objects in the image, and compared it to a food database.",
-          tools:[ 
-            {
-              title: "OpenCV",
-              URL: require('../assets/opencv.png')
-            },
-            {
-              title: "Arduino",
-              URL: require('../assets/arduino.png')
-            },
-            {
-              title: "Google Cloud",
-              URL: require('../assets/googlecloud.png')
-            },
-            {
-              title: "MongoDB",
-              URL: require('../assets/mongodb.png')
-            },
-          ]
+          description: "A hardware and software system designed to suggest recipe's based off the food inside someone's fridge. It detects a fridge door’s motion and takes a photo once it closes. It then uses Google Cloud Vision AI to identify any objects in the image, and compared it to a food database."
         },
         {
           img: "django.jpg",
           title: "Tracking QR Code Generator",
-          description: "A Djago web application that designates trackable and customizable QR Codes for websites requested by any user. The user is able to track information about their QR Codes.",
-          tools:[ 
-            {
-              title: "Django",
-              URL: require('../assets/djangoicon.png')
-            },
-            {
-              title: "SQLite",
-              URL: require('../assets/sqlite.png')
-            },
-          ]
-        },
-        {
-          img: "pdf_remove.png",
-          title: "PDF Blank Remover",
-          description: "A web application that accepts PDF files. Depending on a chosen threshold, the application will remove any pages from the PDF which it deems as blank.",
-          tools: [
-            {
-              title: "Flask",
-              URL: require('../assets/flask.png')
-            }
-          ]
+          description: "A Django web application that designates trackable and customizable QR Codes for websites requested by any user. The user is able to track information about their QR Codes."
         },
         {
           img: "app.png",
           title: "Reddit Slideshow Viewer (Android App)",
-          description: "A simple android app which displays images from a chosen subreddit as a slideshow. The user is able to choose a reddit, how to sort it, as well  time interval for the slideshow.",
-          tools:[ 
-            {
-              title: "Android Studio",
-              URL: require('../assets/as.png')
-            },
-          ]
-        },
+          description: "A simple android app which displays images from a chosen subreddit as a slideshow. The user is able to choose a reddit, how to sort it, as well  time interval for the slideshow."
+        }
       ]
     }
   },
@@ -433,11 +227,7 @@ export default {
         document.execCommand('copy');
         document.body.removeChild(el);
         this.copied = true;
-        setTimeout(() => this.copied = false, 3000)
       }
-    },
-    getImgUrl(path) {
-      return require(path)
     }
   }
 }
@@ -454,54 +244,6 @@ export default {
     scroll-behavior: smooth;
   }
 
-  ol {
-  list-style: none;
-  counter-reset: my-awesome-counter;
-  }
-  li {
-    counter-increment: my-awesome-counter;
-    margin: 0.25rem;
-    transition: 0.3s ease-in-out;
-  }
-  li::before {
-    content: "";
-    background: #8E8D8A;
-    width: 0.5rem;
-    height: 0.5rem;
-    border-radius: 50%;
-    display: inline-block;
-    line-height: 0.5rem;
-    color: white;
-    text-align: center;
-    margin-right: 0.5rem;
-  }
-  li:hover{
-    padding-left: 5px;
-    transform: skew(-5deg);
-    transform: scale(1.002);
-  }
-  ol ol li::before {
-    background: #E85A4F;
-  }
-  ol ol ol li::before {
-    background: #807f7c;
-  }
-
-  .fade-enter-active, .fade-leave-active {
-    transition: opacity .5s
-  }
-  .fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
-    opacity: 0
-  }
-
-  .lg-image-container{
-    width: 540px;
-    height: 250px;
-    float: right;
-  }
-  .img-fluid{
-    float:center !important;
-  }
   section{
     border-radius: 2%;
   }
@@ -509,10 +251,6 @@ export default {
   .logo{
     height: 50px;
     width: 50px;
-  }
-  .logo-sm{
-    height: 40px;
-    width: 40px;
   }
   article{
     display:flex;
@@ -592,7 +330,7 @@ export default {
     padding: 120px 10px;
     background-color: #fff;
     text-align: center;
-  
+
     section{
       padding: 50px 30px;
       width: 78%;
@@ -610,9 +348,6 @@ export default {
       font-weight: bold;
       text-align:left;
     }
-    h5{
-      padding-top: 50px;
-    }
     p, li{
       text-align: left;
       font-size: 1em;
@@ -620,7 +355,9 @@ export default {
     .divider{
       padding-top: 10px;
     }
-    
+    img{
+      float:right;
+    }
     span{
     display: block;
     padding-bottom: 30px;
@@ -629,15 +366,8 @@ export default {
   }
 
   .row{
-    padding-top: 20px;
+    padding-top: 50px;
     margin-top: 20px;
-    img{
-      transition: 0.3s ease-in-out;
-    }
-    img:hover{
-      transform :scale(0.9);
-      
-    }
   }
 
   .portfolio-item{
@@ -646,11 +376,6 @@ export default {
     overflow: hidden;
     background-color: transparent;
 
-    .logo-sm{
-      max-width: 30px;
-      max-height: 30px;
-      min-height: 30px;
-    }
     
     img{
       min-height: 200px;
@@ -778,7 +503,7 @@ export default {
         font-size: 1.25rem;
       }
       .row{
-        padding-top:20px;
+        padding-top:50px;
       }
       a{
       text-decoration: none;
