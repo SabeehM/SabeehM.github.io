@@ -46,6 +46,7 @@
             <div class="icon mx-auto"><img class="logo" :src="require('../assets/djangoicon.png')"></div>
           </div>
         </div>
+        <br></br>
       </section>
     </article>
     -->
