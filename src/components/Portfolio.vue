@@ -511,8 +511,8 @@ export default {
     width: 50px;
   }
   .logo-sm{
-    height: 40px;
-    width: 40px;
+    height: 100%;
+    width: 100%;
   }
   article{
     display:flex;
