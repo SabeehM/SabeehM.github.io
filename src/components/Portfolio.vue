@@ -374,6 +374,21 @@ export default {
           ]
         },
         {
+          img: "vod_emote_tool.png",
+          title: "VOD_Emote_Tool",
+          description: "A python-package created to help gather emote analytics from any twitch VOD. Gathers information about emote distribution, emote usage over time, and suggests pivotal stream moments.",
+          tools:[ 
+            {
+              title: "Python",
+              URL: require('../assets/py_pckge.png')
+            },
+            {
+              title: "MatplotLib",
+              URL: require('../assets/matplotlib.png')
+            },
+          ]
+        },
+        {
           img: "django.jpg",
           title: "Tracking QR Code Generator",
           description: "A Djago web application that designates trackable and customizable QR Codes for websites requested by any user. The user is able to track information about their QR Codes.",
