@@ -1,0 +1,434 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import url("https://use.fontawesome.com/releases/v5.8.1/css/all.css");
+@import url("https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css");
+
+:root {
+    --company_color: #28648c;
+}
+
+*{
+  font-family: "Open Sans", sans-serif;
+  color: #000;
+  scroll-behavior: smooth;
+  transition: 1s ease-in-out;
+}
+
+html{
+    box-shadow:inset 10px 0px 1px 0px var(--company_color);
+}
+
+body{
+  animation: animate 15s ease infinite;
+}
+
+@keyframes animate{
+  0%{
+    background-color: #a4a6a8;
+  }
+  25%{
+    background-color: #b1b3b4;
+  }
+  50%{
+    background-color: #97999b;
+  }
+  75%{
+    background-color: #b1b3b4;
+  }
+  100%{
+    background-color: #a4a6a8;
+  }
+}
+
+a, a:hover{
+    text-decoration: none !important;
+}
+ol {
+list-style: none;
+counter-reset: my-awesome-counter;
+}
+li {
+  counter-increment: my-awesome-counter;
+  margin: 0.25rem;
+  transition: 0.3s ease-in-out;
+}
+li::before {
+  content: "";
+  background: #8E8D8A;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  display: inline-block;
+  line-height: 0.5rem;
+  color: white;
+  text-align: center;
+  margin-right: 0.5rem;
+}
+li:hover{
+  padding-left: 5px;
+  transform: skew(-5deg);
+  transform: scale(1.002);
+}
+ol ol li::before {
+  background: var(--company_color);
+}
+ol ol ol li::before {
+  background: #807f7c;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+  opacity: 0
+}
+
+.lg-image-container{
+  width: 540px;
+  height: 250px;
+  float: right;
+}
+.img-fluid{
+  float:center !important;
+}
+section{
+  border-radius: 0.5%;
+}
+
+.logo{
+  height: 50px;
+  width: 50px;
+}
+.logo-sm{
+  height: 100%;
+  width: 100%;
+}
+article{
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  width: 100%;
+  padding: 0 10px;
+}
+.btn-xl {
+  margin: 20px 20px;
+  font-size: 1.25rem;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background-color: transparent;
+  border: 3px solid #000;
+  color: #000;
+  font-size: 0.8em;
+  letter-spacing: 2px;
+  position: relative;
+  transition: 0.5s ease-in-out;
+  display: inline-block;
+}
+.btn-xl:hover{
+  background-color: transparent;
+  color: var(--company_color);
+  border:3px solid var(--company_color);
+}
+
+.main-image, .second-image{
+  min-height: 100vh;
+  background-size:cover;
+  padding: 0 10px;
+  text-align: center;
+
+  h1{
+    color: #000;
+    font-family: "Open Sans", sans-serif;
+    font-size: 5rem;
+    font-weight: bold;
+    margin-bottom:30px;
+  }
+
+  span{
+    color: #000;
+    display: block;
+    padding-bottom: 30px;
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
+}
+
+
+.second-image{
+  background: #b1fc03;
+}
+h1{
+  font-size: 5rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  transition: 0.5s ease-in-out;
+}
+h1:hover{
+  color: var(--company_color);
+}
+h2{
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+span{
+  display: block;
+  padding-bottom: 30px;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.white-bg{
+  padding: 120px 10px;
+  text-align: center;
+
+  .white-section{
+    padding: 50px 30px;
+    width: 78%;
+    background-color: rgba(255, 255, 255, 0.5) !important;
+    overflow: hidden;
+
+    .exp-desc{
+    font-size:0.9rem;
+    }
+
+    h3{
+    font-size: 2em;
+    font-weight: bold;
+    }
+    h4,h5,h6{
+      font-weight: bold;
+      text-align:left;
+    }
+    h5{
+      padding-top: 50px;
+    }
+    p, li{
+      text-align: left;
+      font-size: 0.9em;
+    }
+    .divider{
+      padding-top: 10px;
+    }
+    
+    span{
+    display: block;
+    padding-bottom: 30px;
+    font-size: 1.25rem;
+    }
+  }
+}
+
+.row{
+  padding-top: 20px;
+  margin-top: 20px;
+  img{
+    transition: 0.3s ease-in-out;
+  }
+  img:hover{
+    transform :scale(0.9);
+    
+  }
+}
+
+.portfolio-item{
+  display: block;
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+
+  .logo-sm{
+    max-width: 30px;
+    max-height: 30px;
+    min-height: 30px;
+  }
+  
+  img{
+    min-height: 200px;
+    max-height:200px;
+    max-width:400px;
+    transition: transform .2s linear;
+  } 
+  a{
+    text-decoration: none;
+  }
+  &:hover{
+    img{
+      transform: scale(0.9);
+    }
+
+    caption{
+      transform: scale(0.9);
+      background-color: rgba($color: #000, $alpha: 0.5);
+    }
+  }
+}
+
+.red-section{
+  padding: 120px 10px;
+  background-color: #8E8D8A;
+  color: #000;
+  text-align: center;
+  border-radius: 1%;
+
+  h2,h3{
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 50px;
+  margin-top: 20px;
+  }
+  h4{
+  font-size: 1.6rem;
+  padding-top: 20px;
+  }
+
+  img{
+    transition: 0.3s ease-in-out;
+  }
+  img:hover{
+    transform: scale(0.9);
+    color: var(--company_color);
+  }
+
+  .icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  color: #001a38;
+  border-radius: 80%;
+
+  
+
+    i{
+      font-size: 2rem;
+      transition: 0.6s ease-in-out;
+    }
+
+    i:hover{
+    color: var(--company_color);
+  }
+  }
+}
+
+.contact-section{
+  padding: 120px 100px;
+  
+  color: #000;
+  text-align: center;
+  border-radius: 1%;
+
+  a{
+      text-decoration: none;
+  }
+
+  h2{
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 50px;
+  margin-top: 20px;
+  }
+  h4{
+  font-size: 1.6rem;
+  padding-top: 20px;
+  }
+
+  .icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  color: #001a38;
+  border-radius: 80%;
+
+  
+
+    i{
+      font-size: 2rem;
+      transition: 0.6s ease-in-out;
+    }
+
+    i:hover{
+    color: var(--company_color);
+  }
+  }
+
+}
+.project-section{
+    padding: 0px 10px;
+    background-color: rgba(255, 255, 255, 0.5) !important;
+    text-align: center;
+    width: 78%;
+    h3{
+      padding-top: 50px;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    span{
+      display: block;
+      padding-bottom: 30px;
+      font-size: 1.25rem;
+    }
+    .row{
+      padding-top:20px;
+    }
+    a{
+    text-decoration: none;
+    }
+    .portfolio-item{
+      display:block;
+      position: relative;
+      overflow: hidden;
+
+      .caption{
+        height: 100%;
+        width: 100%;
+        transition: transform 0.2s linear;
+        .caption-content{
+          background: transparent;
+          text-align:left;
+          color:#000;
+          margin: auto 2rem 2rem;
+        }
+
+        h2{
+          padding-top:20px;
+          background: transparent;
+          font-size: 1.5rem;
+        }
+
+        p{
+          font-size: 0.8rem;
+        }
+      }
+
+      img{
+        transition: transform 0.2s linear;
+      }
+
+      &:hover{
+        img{
+          transform: scale(0.98);
+        }
+        .caption{
+          transform: scale(0.98);
+          
+        }
+      }
+    }
+  }
+
+
+#AW{
+  color: #28648c;
+}
+
+#Uptake{
+  color: #484444;
+}
+
+#Veeva{
+  color: #ff9c20;
+}
