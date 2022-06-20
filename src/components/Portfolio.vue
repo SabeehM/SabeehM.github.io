@@ -3,7 +3,7 @@
     <article class="main-image">
       <section>
         <h1>Sabeeh Malik</h1>
-        <span>3A Computer Engineering Student at the <br> University of Waterloo.</span>
+        <span>3B Computer Engineering Student at the <br> University of Waterloo.</span>
         <button class="btn btn-xl btn-light" @click="scrollTo('experience')">Experience</button>
         <button class="btn btn-xl btn-light" @click="scrollTo('recent-projects')">Projects</button>
         <button class="btn btn-xl btn-light" @click="scrollTo('contact')">Contact Me</button>
@@ -12,6 +12,22 @@
     <article id="experience" class="white-bg">
       <section class ="white-section">
         <h3>Experiences</h3>
+        <h5><a id="OneP" :href=OnePExp.url target="_blank">1Password</a></h5>
+        <div class="lg-image-container">
+          <img class="img-fluid" :src="require('../assets/OneP.png')" alt=''>
+        </div>
+        <h6>Software Developer</h6>
+        <div class="row">
+          <div class="col-lg-1 col-md-6 mb-3" v-for="(element, index) in OnePExp.lang" :key="index">
+            <div class="icon mx-auto"><i><img :title="element.title" class="logo-sm" :src="element.URL"></i></div>
+          </div>
+          <div class="col-lg-1 col-md-6 mb-3" v-for="(element, index) in OnePExp.tools" :key="index">
+            <div class="icon mx-auto"><i><img :title="element.title" class="logo-sm" :src="element.URL"></i></div>
+          </div>
+        </div>
+        <p v-text=OnePExp.preface></p>
+        <!--<p v-text=OnePExp.details></p>-->
+        <div id="space"/>
         <h5><a id="AW" :href=AWExp.url target="_blank">Arctic Wolf</a></h5>
         <div class="lg-image-container">
           <img class="img-fluid" :src="require('../assets/aw.png')" alt=''>

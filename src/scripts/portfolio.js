@@ -2,6 +2,30 @@ export default {
     data: () => {
       return {
         copied: false,
+        OnePExp: {
+          url: "https://1password.com/",
+          preface: "Currently interning at 1Password as part of the Client-Server Advancement team, using Golang, Rust, and Typescript with React.",
+          details: "",
+          lang: [{
+            title: "Golang",
+            URL: require('../assets/golang.png')
+          },
+          {
+            title: "Typescript",
+            URL: require('../assets/ts.png')
+          },
+          {
+            title: "Rust",
+            URL: require('../assets/rust.png')
+          },
+        ],
+          tools: [
+            {
+              title: "React",
+              URL: require('../assets/react.png')
+            },
+          ]
+        },
         AWExp: {
           url: "https://arcticwolf.com/",
           preface: "At Arctic Wolf, I interned as a software developer for the Pollerbear (Data Ingestion) team, getting involved with subteams focused on vulnerability analysis \
@@ -340,7 +364,7 @@ export default {
       iterateColors(){
         let root = document.documentElement
         const interval = 7 * 1000
-        const company_colors = ["#28648c", "#484444","#ff9820"]
+        const company_colors = ["#00b4f8","#28648c", "#484444","#ff9820"]
         var iterator = 0
         setInterval(function(){
           root.style.setProperty('--company_color', company_colors[iterator])
