@@ -332,44 +332,14 @@ export default {
         ]
       }
     },
-    mounted: function(){
-        this.iterateColors()
-    },
     methods: {
-      scrollTo(element){
-        const el = document.querySelector("#"+element);
-        el.scrollIntoView({
-          behaviour: "smooth",
-          block: "start"
-        })
-      },
       copyInfo(element){
         if(element.includes("envelope")){
-          const el = document.createElement('textarea');
-          el.value = "s73malik@uwaterloo.ca";
-          el.setAttribute('readonly', '');
-          el.style.position = 'absolute';
-          el.style.left = '-9999px';
-          document.body.appendChild(el);
-          el.select();
-          document.execCommand('copy');
-          document.body.removeChild(el);
-          this.copied = true;
-          setTimeout(() => this.copied = false, 3000)
+          window.location.href = "mailto:s73malik@uwaterloo.ca";
         }
       },
       getImgUrl(path) {
         return require(path)
       },
-      iterateColors(){
-        let root = document.documentElement
-        const interval = 7 * 1000
-        const company_colors = ["#00b4f8","#28648c", "#484444","#ff9820"]
-        var iterator = 0
-        setInterval(function(){
-          root.style.setProperty('--company_color', company_colors[iterator])
-          iterator = (iterator + 1) % company_colors.length
-        }, interval)
-      }
     }
   }
